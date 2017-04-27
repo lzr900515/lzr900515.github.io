@@ -29,15 +29,75 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>12324</section>
+				<section>
+					<section>
+						<h2 style="padding: 150px 0px">一套技术存储／分享体系的构思</h2>
+						<p class="fragment fade-up highlight-red">WHAT</p>
+						<p class="fragment fade-up highlight-green">WHY</p>
+						<p class="fragment fade-up highlight-blue">HOW</p>
+					</section>
+					<section data-state="somestate" data-markdown>
+						<script type="text/template">
+							### WHAT
+
+							---
+
+							- 技术内容包括：技术文档 MarkDown／Blog／PPT／插件及源码
+
+							- 存储方案：技术载体采用可跨平台使用的MarkDown为主，以web展现形式，数据做到云存储
+
+							- web: 1.基于md的技术博客 2.基于reveal.js的presentation 3.基于git的代码开源
+						</script>
+					</section>
+					<section data-state="somestate" data-markdown>
+						<script type="text/template">
+							### WHY
+
+							---
+
+							- 知识架构的永久存储
+
+							- 开源，分享，提高
+
+							- 提高自己的影响力
+						</script>
+					</section>
+					<section data-state="somestate" data-markdown>
+						<script type="text/template">
+							### HOW
+
+							---
+
+							- gitHub Page:
+								- [我的gitHub Page](https://lzr900515.github.io/)
+								- [gitHub Page介绍](https://pages.github.com/)
+							- Hexo＋yilia:
+								- [我的Blog](https://lzr900515.github.io/)
+								- [Hexo介绍](https://github.com/hexojs/hexo/blob/master/README.md)
+								- [yilia介绍](https://github.com/litten/hexo-theme-yilia)
+							- reveal.js
+								- [我的presentation](https://lzr900515.github.io/)
+								- [reveal介绍](https://github.com/hakimel/reveal.js#fragments)
+						</script>
+					</section>
+				</section>
 				<section class="page1">
 					<iframe style="postion:absolute;height:90%;width:90%" src="http://lab.hakim.se/reveal-js/#/"></iframe>
 				</section>
+
+				<section>
+					<h1 style="padding-left:700px;color:orangered;transform: rotate(90deg);">END && DEMO</h1>
+					<aside class="notes">
+						F键盘 全屏 ESC推出
+						B隐藏／展示演讲内容
+						S显示／隐藏speak notes
+						O打开／关闭流程图
+					</aside>
+				</section>
+
+				<!-- Demo  -->
 				<section data-background-image="https://d1835mevib0k1p.cloudfront.net/portfolio/v2/images/sketchtoy.png">
 					<span style="color:red" class="title" onclick="titelClick()">Slide 1</span>
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
 				</section>
 				<section>
 					<section>
@@ -64,9 +124,9 @@
 						 data-charset="iso-8859-15">
 				</section>
 				<section><img src="https://d1835mevib0k1p.cloudfront.net/portfolio/v2/images/sketchtoy.png"></section>
-				<!--<section>-->
-					<!--<iframe width="100%" height="100%" src="https://www.huoban.com/"></iframe>-->
-				<!--</section>-->
+				<section>
+					<iframe width="100%" height="100%" src="https://www.huoban.com/" allowfullscreen></iframe>
+				</section>
 				<section>
 					<h2>video show</h2>
 					<video width="70%" height="70%" data-autoplay src="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4" type="video/mp4"></video>
@@ -115,7 +175,7 @@
 				slideNumber: false,// Display the page number of the current slide
 
 				// Vertical centering of slides
-				center: false,
+				center: true,
 
 				// Transition style
 				transition: 'convex', // none/fade/slide/convex/concave/zoom
@@ -137,7 +197,14 @@
 			Reveal.addEventListener( 'ready', function( event ) {
 				// event.currentSlide, event.indexh, event.indexv
 			} );
-
+			Reveal.addEventListener( 'somestate', function() {
+				// TODO: Sprinkle magic
+				console.log('special solid');
+			}, false );
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+				console.log('slide changed');
+			} );
 			function titelClick(){
 				alert("title clicked!!");
 			}
