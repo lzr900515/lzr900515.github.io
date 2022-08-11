@@ -2,7 +2,7 @@
   "name": "slidev-presentation",
   "private": true,
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build --base /slidev-dist/ && rm -rf ../slidev-dist && mv -f ./dist ../slidev-dist",
     "dev": "slidev --open",
     "export": "slidev export"
   },
